@@ -4,10 +4,13 @@
     define("PASSWORD", "");
     define("DBNAME", "baobites");
 
-    class crud_login{
+    class crud{
         function __construct(){
             $connection = mysqli_connect(SERVER, USERNAME, PASSWORD, DBNAME);
             $this->conn = $connection;
+            if ($this->conn){
+                echo "OK";
+            }
         }
 
         public function login($username, $email, $password){
@@ -19,8 +22,8 @@
             }
         }
 
-        public function register($fname, $lname, $username, $email, $password){
-            $register = "INSERT INTO users(Fname, Lname, Username, Email, Password) VALUES('$fname', '$lname', '$username', '$email', $password')";
+        public function registration($fname, $lname, $username, $email, $password){
+            $register = "INSERT INTO users(Fname, Lname, Username, Email, Password) VALUES('$fname', '$lname', '$username', '$email', '$password')";
             $result = mysqli_query($this->conn, $register);
 
             if ($result){
