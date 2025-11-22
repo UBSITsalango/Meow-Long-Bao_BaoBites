@@ -1,18 +1,13 @@
 <?php
 require '../app/db.php';
-session_start();
 
-$uid = $_SESSION['user_id'];
-
-$stmt = $pdo->prepare("
+$stmt = $pdo->query("
     SELECT r.*, u.username
-    FROM favorite f
+    FROM featured_recipes f
     JOIN recipes r ON f.recipe_id = r.recipe_id
     JOIN users u ON r.user_id = u.user_id
-    WHERE f.user_id = ?
-    ORDER BY r.created_at DESC
+    ORDER BY f.id DESC
+    LIMIT 3
 ");
-$stmt->execute([$uid]);
 
 echo json_encode($stmt->fetchAll(PDO::FETCH_ASSOC));
-?>

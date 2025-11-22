@@ -1,0 +1,69 @@
+<?php 
+session_start();
+include 'header.php';
+
+if (isset($_SESSION['user_id'])) include 'navbar.php';
+else include 'navbar_guest.php';
+?>
+<body class="cream-bg">
+
+<section class="py-5 baobites-hero">
+  <div class="container text-center py-4">
+      <h1 class="fw-bold" style="color:#333;">Contact Us</h1>
+      <p class="lead mt-3" style="max-width:700px; margin:auto; color:#555;">
+          We'd love to hear from you! Whether it's feedback, questions, or suggestions —  
+          the BaoBites team is always happy to help.
+      </p>
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="container" style="max-width:900px;">
+
+    <div class="p-4 p-md-5 rounded shadow-sm" style="background:white; border-radius:20px;">
+      <div class="row g-4">
+          <div class="col-md-6">
+              <h3 class="fw-bold mb-3" style="color:#E2725B;">Get in Touch</h3>
+
+              <form action="#" method="POST">
+                  
+                  <div class="mb-3">
+                      <label class="form-label fw-semibold">Full Name</label>
+                      <input type="text" class="form-control" placeholder="Enter your name" required>
+                  </div>
+
+                  <div class="mb-3">
+                      <label class="form-label fw-semibold">Email Address</label>
+                      <input type="email" class="form-control" placeholder="Enter your email" required>
+                  </div>
+
+                  <div class="mb-3">
+                      <label class="form-label fw-semibold">Message</label>
+                      <textarea class="form-control" rows="5" placeholder="Write your message..." required></textarea>
+                  </div>
+
+                  <button class="btn orange-btn w-100">Send Message</button>
+
+              </form>
+          </div>
+
+          <div class="col-md-6">
+              
+              <h3 class="fw-bold mb-3" style="color:#A3B18A;">Contact Details</h3>
+
+              <p class="mb-2"><strong>Email:</strong> support@baobites.com</p>
+              <p class="mb-2"><strong>Phone:</strong> +63 900 000 0000</p>
+              <p class="mb-3"><strong>Address:</strong> Baguio City, Philippines</p>
+
+              <div class="mt-4">
+                  <img src="../assets/images/contact.png" alt="Contact Illustration"
+                       style="max-width: 100%; border-radius: 20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</section>
+<?php include 'footer.php'; ?>
+</body>
+</html>

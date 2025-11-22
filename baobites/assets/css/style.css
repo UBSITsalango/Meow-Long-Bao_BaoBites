@@ -1,0 +1,170 @@
+/* GLOBAL THEME VARIABLES */
+:root {
+    --orange: #E2725B;
+    --cream: #FFF4E0;
+    --sage: #A3B18A;
+    --charcoal: #333333;
+}
+
+/* GLOBAL BASICS */
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    padding-bottom: 80px !important;
+}
+
+body {
+    background: var(--cream);
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    padding-bottom: 80px;
+}
+
+body.cream-bg {
+    background: #FFF8ED;
+}
+
+.baobites-hero {
+    background: linear-gradient(120deg, #FFE3BA, #FFD095) !important;
+}
+
+.baobites-hero h1,
+.baobites-hero p {
+    color: #333;
+}
+
+h1, h2, h3, h4 { color: var(--charcoal); }
+
+/* BUTTONS */
+.orange-btn {
+    background: var(--orange) !important;;
+    color: white !important;;
+    border-radius: 12px !important;;
+    transition: 0.2s !important;;
+}
+.orange-btn:hover { opacity: 0.85 !important;; }
+
+/* CARDS */
+.card {
+    border-radius: 16px;
+    transition: 0.2s;
+}
+.card:hover {
+    transform: translateY(-4px);
+}
+
+/* FAVORITES + RATING */
+.favorite-heart { font-size: 30px; cursor:pointer; color:#ccc; }
+.favorite-heart.active { color:red; }
+.star { font-size:26px; cursor:pointer; color:#ccc; }
+.star.selected { color:var(--orange); }
+
+@media(max-width:768px){
+    .recipe-card{margin-bottom:15px;}
+}
+
+/* CAROUSEL ARROWS */
+.carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23E2725B' viewBox='0 0 16 16'%3E%3Cpath d='M11.354 1.646a.5.5 0 0 0-.708 0L4.5 7.793l6.146 6.147a.5.5 0 0 0 .708-.708L5.707 7.793l5.647-5.647a.5.5 0 0 0 0-.707z'/%3E%3C/svg%3E");
+}
+
+.carousel-control-next-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23E2725B' viewBox='0 0 16 16'%3E%3Cpath d='M4.646 1.646a.5.5 0 0 1 .708 0L11.5 7.793l-6.146 6.147a.5.5 0 0 1-.708-.708L10.293 7.793 4.646 2.146a.5.5 0 0 1 0-.707z'/%3E%3C/svg%3E");
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 45px;
+    height: 45px;
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* SECTION COLORS */
+.section-light {
+    background: #FFFFFF;
+    border-radius: 20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+/* SECTION TITLES- */
+.section-title-orange {
+    color: var(--orange);
+}
+.section-title-green {
+    color: var(--sage);
+}
+.team-title {
+    color: var(--charcoal);
+    font-size: 2rem;
+}
+
+/* TEAM CAROUSEL STYLING */
+.team-photo {
+    height: 180px;
+    width: 180px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+.team-photo:hover {
+    transform: scale(1.10);
+}
+
+.team-name {
+    color: var(--orange);
+}
+
+.team-role {
+    color: #555;
+}
+
+/* Indicators */
+.carousel-indicators [data-bs-target] {
+    background-color: var(--orange);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+/* Fade transition */
+.carousel.carousel-fade .carousel-item {
+    transition: opacity 1s ease-in-out;
+}
+
+.carousel-item {
+    padding: 20px 0 60px 0;
+}
+
+/* SIGNATURE TEXT */
+.signature {
+    color: var(--orange);
+    font-size: 1.1rem;
+}
+
+/* ANIMATIONS */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 1s forwards;
+}
+
+.delay-1 { animation-delay: 0.3s; }
+.delay-2 { animation-delay: 0.6s; }
+.delay-3 { animation-delay: 0.9s; }
+.delay-4 { animation-delay: 1.2s; }
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
