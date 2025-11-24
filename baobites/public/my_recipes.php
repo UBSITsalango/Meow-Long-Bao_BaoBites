@@ -7,7 +7,7 @@ requireLogin();
 <head>
     <title>My Recipes - BaoBites</title>
     <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" 
+    <link rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 </head>
 
@@ -48,9 +48,12 @@ requireLogin();
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="../assets/js/app.js"></script>
+
 <script>
 $(document).ready(function () {
+
     $.get('../ajax/load_my_recipes.php', function(raw) {
+
         let recipes = jsonSafeParse(raw) || [];
         let html = "";
 
@@ -77,7 +80,7 @@ $(document).ready(function () {
                             </p>
 
                             <a href="recipe.php?id=${r.recipe_id}" 
-                               class="btn orange-btn btn-sm fw-semibold" 
+                               class="btn orange-btn btn-sm fw-semibold"
                                style="border-radius:18px;">
                                View
                             </a>
@@ -99,5 +102,6 @@ $(document).ready(function () {
     });
 });
 </script>
+
 </body>
 </html>

@@ -11,11 +11,11 @@
 <?php include 'header.php'; ?>
 
 <body class="cream-bg">
-
 <?php
 if (isset($_SESSION['user_id'])) include 'navbar.php';
 else include 'navbar_guest.php';
 ?>
+<main>
 
 <section class="py-5 baobites-hero">
     <div class="container text-center">
@@ -78,6 +78,7 @@ else include 'navbar_guest.php';
     </div>
 </section>
 
+</main>
 <?php include 'footer.php'; ?>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

@@ -12,16 +12,21 @@ requireLogin();
 
 <body class="cream-bg">
 
+<?php include 'header.php'; ?>
 <?php include 'navbar.php'; ?>
 
 <main>
 <div class="container mt-4" style="max-width:700px;" 
      id="editContainer" 
      data-id="<?= htmlspecialchars($_GET['id'] ?? '') ?>">
+
     <h2 class="fw-bold" style="color:#A3B18A;">Edit Recipe</h2>
     <div id="editRecipeMsg" class="alert d-none mt-3"></div>
-    <form id="editRecipeForm" class="p-4 rounded shadow-sm mt-3" style="background:white;">
-        
+
+    <form id="editRecipeForm" 
+          class="p-4 rounded shadow-sm mt-3" 
+          style="background:white;">
+
         <input type="hidden" name="recipe_id" id="edit_id">
 
         <label class="fw-semibold">Title</label>

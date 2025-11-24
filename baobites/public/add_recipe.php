@@ -30,8 +30,8 @@ requireLogin();
         <div id="addRecipeMsg" class="alert d-none"></div>
 
         <form id="addRecipeForm" 
-              class="p-4 p-md-5 bg-white shadow-sm rounded" 
-              style="border-radius:20px; animation: fadeUp 0.5s ease;">
+              class="p-4 p-md-5 bg-white shadow-sm rounded"
+              style="border-radius:20px;">
 
             <div class="mb-3">
                 <label class="form-label fw-semibold">Recipe Title</label>
@@ -40,14 +40,12 @@ requireLogin();
 
             <div class="mb-3">
                 <label class="form-label fw-semibold">Ingredients</label>
-                <textarea name="ingredients" rows="5" class="form-control" 
-                          placeholder="List ingredients here..." required></textarea>
+                <textarea name="ingredients" rows="5" class="form-control" required></textarea>
             </div>
 
             <div class="mb-3">
                 <label class="form-label fw-semibold">Instructions</label>
-                <textarea name="instructions" rows="6" class="form-control" 
-                          placeholder="Write step-by-step instructions..." required></textarea>
+                <textarea name="instructions" rows="6" class="form-control" required></textarea>
             </div>
 
             <div class="mb-4">
@@ -60,9 +58,8 @@ requireLogin();
                     <option>Other</option>
                 </select>
             </div>
-            <button class="btn orange-btn w-100 py-2 fw-semibold">
-                Publish Recipe
-            </button>
+
+            <button class="btn orange-btn w-100 py-2 fw-semibold">Publish Recipe</button>
         </form>
     </div>
 </section>
@@ -71,5 +68,6 @@ requireLogin();
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="../assets/js/app.js"></script>
+
 </body>
 </html>

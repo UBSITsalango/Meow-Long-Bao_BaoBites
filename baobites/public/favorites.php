@@ -11,18 +11,21 @@ requireLogin();
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 </head>
 
+<?php include 'header.php'; ?>
+
 <body class="cream-bg">
-    
+
 <?php include 'navbar.php'; ?>
+
+<main>  <!-- FIXED: Main starts here -->
 
 <section class="py-5 baobites-hero">
     <div class="container text-center">
         <h1 class="fw-bold">Your Favorite Recipes</h1>
-        <p class="lead mt-2">Browse, manage, and enjoy the recipes you've saved.</p>
+        <p class="lead mt-3">Browse, manage, and enjoy the recipes you've saved.</p>
     </div>
 </section>
 
-<main class="flex-grow-1">
 <div class="container mt-4">
     <h2 class="fw-bold" style="color:#333;">Favorites</h2>
     <p class="text-muted mb-3">Click a recipe to view it, or tap the heart to remove it.</p>
@@ -36,12 +39,14 @@ requireLogin();
         <a href="dashboard.php" class="btn orange-btn">Explore Recipes</a>
     </div>
 </div>
-</main>
+
+</main> <!-- FIXED: Main ends here -->
 
 <?php include 'footer.php'; ?>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="../assets/js/app.js"></script>
+
 <script>
 $(function() {
 

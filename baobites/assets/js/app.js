@@ -233,7 +233,10 @@ $(document).on("submit", "#commentForm", function (e) {
 
 /* Rating */
 $(document).on("click", ".star", function () {
-    let score = $(this).data("val");
+    if ($(this).css("cursor") === "not-allowed" || $(this).css("cursor") === "default") {
+        return; // owner or guest
+    }
+    let score = $(this).data("val") || $(this).data("score");
     let id = $("#recipeContainer").data("id");
     $.post(BASE_URL + "/ajax/add_rating.php", { score, recipe_id: id }, () => location.reload());
 });

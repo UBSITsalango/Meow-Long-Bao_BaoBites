@@ -1,7 +1,8 @@
 <?php 
 session_start();
 include 'header.php';
-include 'navbar_guest.php';
+if (isset($_SESSION['user_id'])) include 'navbar.php';
+else include 'navbar_guest.php';
 ?>
 
 <section class="baobites-hero py-5">
@@ -16,6 +17,7 @@ include 'navbar_guest.php';
 
 <section class="py-5 section-light">
   <div class="container" style="max-width:900px;">
+
       <div class="mb-5 text-center fade-in-up">
           <h2 class="fw-bold section-title-orange">Our Story</h2>
           <p class="mt-3">
