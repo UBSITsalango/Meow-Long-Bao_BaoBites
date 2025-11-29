@@ -5,7 +5,7 @@ requireLogin();
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Recipes - BaoBites</title>
+    <title>BaoBites</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
@@ -13,7 +13,7 @@ requireLogin();
 
 <?php include 'header.php'; ?>
 
-<body class="cream-bg">
+<main class="cream-bg">
 
 <?php include 'navbar.php'; ?>
 
@@ -36,13 +36,15 @@ requireLogin();
 
         <div id="emptyMyRecipes" class="text-center mt-5 d-none">
             <img src="../assets/images/empty.png" style="width:160px; opacity:0.8;">
-            <h4 class="mt-3 fw-bold">You haven’t shared a recipe yet</h4>
+            <h4 class="mt-3 fw-bold" style="color:#666;">You haven’t shared a recipe yet</h4>
             <p class="text-muted">Create your first recipe.</p>
             <a href="add_recipe.php" class="btn orange-btn">Add Your First Recipe</a>
         </div>
 
     </div>
 </section>
+
+</main>
 
 <?php include 'footer.php'; ?>
 

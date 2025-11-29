@@ -1,21 +1,12 @@
-<?php session_start(); ?>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Dashboard - BaoBites</title>
+<?php 
+session_start();
+include 'header.php';
 
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-</head>
-
-<?php include 'header.php'; ?>
-
-<body class="cream-bg">
-<?php
 if (isset($_SESSION['user_id'])) include 'navbar.php';
 else include 'navbar_guest.php';
 ?>
-<main>
+
+<main class="cream-bg">
 
 <section class="py-5 baobites-hero">
     <div class="container text-center">
@@ -57,7 +48,6 @@ else include 'navbar_guest.php';
 
         <div id="emptyState" class="text-center mt-5 d-none">
             <img src="../assets/images/empty.png"
-                 alt="No Recipes"
                  style="width:160px; opacity:0.8;">
             <h4 class="mt-3 fw-bold" style="color:#666;">No recipes found</h4>
             <p class="text-muted">
@@ -67,11 +57,7 @@ else include 'navbar_guest.php';
             </p>
 
             <?php if (isset($_SESSION['user_id'])): ?>
-                <a href="add_recipe.php"
-                   class="btn orange-btn"
-                   style="border-radius:20px;">
-                   Add Recipe
-                </a>
+                <a href="add_recipe.php" class="btn orange-btn" style="border-radius:20px;">Add Recipe</a>
             <?php endif; ?>
         </div>
 
@@ -79,6 +65,7 @@ else include 'navbar_guest.php';
 </section>
 
 </main>
+
 <?php include 'footer.php'; ?>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -121,6 +108,5 @@ $(document).ready(function () {
 
 });
 </script>
-
 </body>
 </html>

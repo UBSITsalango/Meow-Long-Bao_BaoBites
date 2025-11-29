@@ -115,7 +115,7 @@ cd Meow-Long-Bao_BaoBites
 ```bash
 # Create database in MySQL
 CREATE DATABASE baobites;
-USE baobites_db;
+USE baobites;
 
 # Import schema
 SOURCE path/to/schema.sql;
@@ -125,7 +125,7 @@ SOURCE path/to/schema.sql;
 Edit `/app/db.php`:
 ```php
 $pdo = new PDO(
-    "mysql:host=localhost;dbname=baobites_db", 
+    "mysql:host=localhost;dbname=Meow-Long-Bao_BaoBites", 
     "root", 
     ""
 );

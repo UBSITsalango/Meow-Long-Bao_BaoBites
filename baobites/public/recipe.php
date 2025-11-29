@@ -20,7 +20,6 @@ if (!$recipe_id) {
 </div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="../assets/js/app.js"></script>
 
 <script>
 $(document).ready(function () {
@@ -174,15 +173,6 @@ $(document).on("click", ".star", function () {
     let recipeId = $("#recipeContainer").data("id");
 
     $.post("../ajax/add_rating.php", { recipe_id: recipeId, score: score }, function () {
-        location.reload();
-    });
-});
-
-// 💬 Comment
-$(document).on("submit", "#commentForm", function (e) {
-    e.preventDefault();
-
-    $.post("../ajax/add_comment.php", $(this).serialize(), function () {
         location.reload();
     });
 });

@@ -1,22 +1,14 @@
-<?php session_start(); 
+<?php 
+session_start(); 
 
+// Prevent logged-in users from accessing this page
 if (isset($_SESSION['user_id'])) {
     header("Location: dashboard.php");
     exit;
 }
+
+include 'header.php'; 
 ?>
-
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Register - BaoBites</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-</head>
-
-<?php include 'header.php'; ?>
-<body class="cream-bg">
 
 <?php include 'navbar_guest.php'; ?>
 
@@ -87,8 +79,5 @@ if (isset($_SESSION['user_id'])) {
 </main>
 
 <?php include 'footer.php'; ?>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="../assets/js/app.js"></script>
-
 </body>
 </html>

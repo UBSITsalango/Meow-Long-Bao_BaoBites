@@ -83,6 +83,7 @@ include '../header.php';
                             <th>Username</th>
                             <th>Email</th>
                             <th>Joined</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody id="adminUserTable"></tbody>

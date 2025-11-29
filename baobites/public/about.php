@@ -1,6 +1,7 @@
 <?php 
 session_start();
 include 'header.php';
+
 if (isset($_SESSION['user_id'])) include 'navbar.php';
 else include 'navbar_guest.php';
 ?>
@@ -39,37 +40,74 @@ else include 'navbar_guest.php';
           <p class="mt-3">The passionate individuals behind BaoBites</p>
       </div>
 
-      <div id="teamCarousel" class="carousel slide carousel-fade fade-in-up delay-3" 
-           data-bs-ride="carousel" data-bs-interval="3500" data-bs-pause="hover">
+    <div id="teamCarousel" class="carousel slide carousel-fade fade-in-up delay-3" 
+        data-bs-ride="carousel" data-bs-interval="3500" data-bs-pause="hover">
 
+        <!-- Indicators -->
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#teamCarousel" class="active" data-bs-slide-to="0"></button>
             <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="1"></button>
             <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="3"></button>
+            <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="4"></button>
+            <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="5"></button>
+            <button type="button" data-bs-target="#teamCarousel" data-bs-slide-to="6"></button>
         </div>
 
         <div class="carousel-inner">
 
+            <!-- Member 1 -->
             <div class="carousel-item active text-center">
                 <img src="../assets/images/team1.jpg" class="team-photo rounded-circle shadow-lg">
-                <h4 class="mt-3 fw-bold team-name">Member Name 1</h4>
-                <p class="team-role">Role / Title</p>
+                <h4 class="mt-3 fw-bold team-name">Tyrone Salango</h4>
+                <p class="team-role">Turon / Tarzan</p>
             </div>
 
+            <!-- Member 2 -->
             <div class="carousel-item text-center">
                 <img src="../assets/images/team2.jpg" class="team-photo rounded-circle shadow-lg">
-                <h4 class="mt-3 fw-bold team-name">Member Name 2</h4>
-                <p class="team-role">Role / Title</p>
+                <h4 class="mt-3 fw-bold team-name">Eljay Bugtong</h4>
+                <p class="team-role">Pope / Jillian</p>
             </div>
 
+            <!-- Member 3 -->
             <div class="carousel-item text-center">
                 <img src="../assets/images/team3.jpg" class="team-photo rounded-circle shadow-lg">
-                <h4 class="mt-3 fw-bold team-name">Member Name 3</h4>
-                <p class="team-role">Role / Title</p>
+                <h4 class="mt-3 fw-bold team-name">Odin Xavier Alhambra</h4>
+                <p class="team-role">Bading / Spokesperson</p>
+            </div>
+
+            <!-- Member 4 -->
+            <div class="carousel-item text-center">
+                <img src="../assets/images/team4.jpg" class="team-photo rounded-circle shadow-lg">
+                <h4 class="mt-3 fw-bold team-name">Ulysis Libongen</h4>
+                <p class="team-role">Maitim / Erebos nalang daw wag indian</p>
+            </div>
+
+            <!-- Member 5 -->
+            <div class="carousel-item text-center">
+                <img src="../assets/images/team5.jpg" class="team-photo rounded-circle shadow-lg">
+                <h4 class="mt-3 fw-bold team-name">Redlie Lousille Cerezo</h4>
+                <p class="team-role">Blue / Silly</p>
+            </div>
+
+            <!-- Member 6 -->
+            <div class="carousel-item text-center">
+                <img src="../assets/images/team6.jpg" class="team-photo rounded-circle shadow-lg">
+                <h4 class="mt-3 fw-bold team-name">Draven Clark Victoria</h4>
+                <p class="team-role">Shy Type / Kyle</p>
+            </div>
+
+            <!-- Member 7 -->
+            <div class="carousel-item text-center">
+                <img src="../assets/images/team7.jpg" class="team-photo rounded-circle shadow-lg">
+                <h4 class="mt-3 fw-bold team-name">Paul Bernard Nobleza</h4>
+                <p class="team-role">Terminator / Robocop</p>
             </div>
 
         </div>
 
+        <!-- Controls -->
         <button class="carousel-control-prev" type="button" data-bs-target="#teamCarousel" data-bs-slide="prev">
             <span class="carousel-control-prev-icon"></span>
         </button>
@@ -77,7 +115,7 @@ else include 'navbar_guest.php';
         <button class="carousel-control-next" type="button" data-bs-target="#teamCarousel" data-bs-slide="next">
             <span class="carousel-control-next-icon"></span>
         </button>
-      </div>
+    </div>
 
       <p class="fw-semibold text-center mt-4 fade-in-up delay-4 signature">
           Created with ❤️ by Team Meow Long Bao

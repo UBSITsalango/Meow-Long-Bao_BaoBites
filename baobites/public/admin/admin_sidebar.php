@@ -1,8 +1,10 @@
 <nav id="adminSidebar" class="admin-sidebar shadow-sm">
 
     <div class="brand">
-        <img src="../assets/images/logo.png" alt="BaoBites">
-        <div class="title nav-text">BaoBites</div>
+        <div class="brand-inner">
+            <img src="../../assets/images/logo.png" alt="BaoBites">
+            <div class="title nav-text">BaoBites</div>
+        </div>
     </div>
 
     <button id="sidebarToggle" class="sidebar-toggle-btn">

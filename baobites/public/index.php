@@ -1,5 +1,5 @@
 <?php 
-session_start(); 
+session_start();
 include 'header.php';
 
 if (isset($_SESSION['user_id'])) include 'navbar.php';
@@ -28,9 +28,7 @@ else include 'navbar_guest.php';
       </div>
 
       <div class="d-none d-md-block fade-in-up delay-1">
-          <img src="../assets/images/cookie.png"
-               alt="Decor"
-               class="hero-cookie">
+          <img src="../assets/images/cookie.png" class="hero-cookie">
       </div>
 
   </div>
