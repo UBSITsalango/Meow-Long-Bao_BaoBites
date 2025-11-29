@@ -1,70 +1,67 @@
-🍽️ BaoBites – Community Recipe Sharing Platform
+# 🍽️ BaoBites – Community Recipe Sharing Platform
 
-A Web-Based Recipe Sharing System by Team Meow Long Bao
+A community-driven web platform where users can create, share, browse, and save recipes. Features user authentication, complete CRUD operations, favorites, comments, ratings, and a clean animated UI.
 
-BaoBites is a community-driven web platform where users can create, share, browse, and save recipes. It features user authentication, CRUD operations for recipes, favorites, comments, and ratings — all wrapped in a clean, animated UI built with PHP, MySQL, AJAX, and Bootstrap.
+**Developed by Team Meow Long Bao** | University of Baguio
 
-📌 Features
-👤 User Accounts
+---
 
-Register, Login, Logout
+## ✨ Features
 
-Guest browsing mode with limited access
+### 👤 User Accounts
+- Register, Login, and Logout functionality
+- Guest browsing mode with limited access
+- Login/Register page restrictions for authenticated users
+- Admin panel (optional implementation)
 
-Users cannot access login/register when already logged in
+### 📒 Recipe Management
+- ✅ Create, Read, Update, Delete recipes (CRUD)
+- ✅ Browse all community recipes (Dashboard)
+- ✅ Personal "My Recipes" section
+- ✅ Detailed recipe pages with ingredients, instructions, category, and creator info
 
-Admin panel (optional if implemented)
+### ❤️ Favorites System
+- ✅ Save/unsave favorite recipes (logged-in users only)
+- ✅ Dedicated favorites page
+- ✅ Quick favorite toggle with AJAX
 
-📒 Recipe Management
+### ⭐ Ratings & Comments
+- ✅ Rate recipes (5-star system)
+- ✅ Real-time average rating display
+- ✅ User comments with timestamps
+- ✅ Guest view-only access (no rate/comment)
+- ✅ Users cannot rate their own recipes
 
-Add, edit, delete recipes
+### 🎨 UI/UX
+- ✅ Animated hero banners with cookie animations
+- ✅ Fade-in animations on key pages
+- ✅ Mobile-responsive design (Bootstrap 5)
+- ✅ Color-themed layout (Orange, Sage, Cream)
+- ✅ Smooth AJAX interactions (no page reloads)
 
-View all community recipes (dashboard)
+---
 
-“My Recipes” section
+## 🛠️ Tech Stack
 
-Detailed recipe page with ingredients, instructions, category, and creator info
+| Layer | Technology |
+|-------|-----------|
+| **Frontend** | HTML5, CSS3, Bootstrap 5, jQuery |
+| **Backend** | PHP 8+ |
+| **Database** | MySQL with PDO Prepared Statements |
+| **AJAX** | jQuery AJAX |
+| **Version Control** | Git & GitHub |
 
-❤️ Favorites
+---
 
-Logged-in users can favorite/unfavorite recipes
+## 📁 Project Structure
 
-Favorites page with list of saved recipes
-
-⭐ Ratings & Comments
-
-Users can rate recipes (except their own)
-
-Average rating displayed
-
-Comments section with user name and timestamp
-
-Guests can view but cannot rate or comment
-
-✨ UI/UX
-
-Animated hero banners with cookie animation
-
-Fade-in animations on select pages
-
-Mobile-friendly responsive design
-
-Color-themed layout (orange, sage, cream)
-
-🏗️ Tech Stack
-Layer	Technology
-Frontend	HTML, CSS, Bootstrap 5, jQuery
-Backend	PHP 8+
-Database	MySQL (PDO Prepared Statements)
-AJAX	jQuery AJAX (no page reloads for CRUD)
-📁 Folder Structure
+```
 baobites/
-│
 ├── app/
-│   ├── db.php
-│   ├── auth.php
+│   ├── db.php                 # Database connection (PDO)
+│   └── auth.php               # Authentication logic
 │
-├── ajax/
+├── ajax/                      # AJAX endpoints (no page reload)
 │   ├── add_recipe.php
 │   ├── add_comment.php
 │   ├── add_rating.php
@@ -73,86 +70,109 @@ baobites/
 │   ├── load_recipe.php
 │   ├── load_all_recipes.php
 │   ├── load_my_recipes.php
-│   ├── load_favorites.php
-│   └── (other AJAX files)
+│   └── load_favorites.php
 │
-├── public/
-│   ├── index.php
-│   ├── dashboard.php
+├── public/                    # Front-facing pages
+│   ├── index.php              # Landing page
+│   ├── dashboard.php          # Recipe feed
 │   ├── my_recipes.php
 │   ├── favorites.php
-│   ├── recipe.php
+│   ├── recipe.php             # Recipe details
 │   ├── login.php
 │   ├── register.php
-│   ├── about.php
-│   ├── contact.php
 │   ├── add_recipe.php
-│   └── edit_recipe.php
+│   ├── edit_recipe.php
+│   ├── about.php
+│   └── contact.php
 │
 ├── assets/
 │   ├── css/style.css
 │   ├── js/app.js
-│   ├── images/
+│   └── images/
 │
 └── README.md
+```
 
-⚙️ Installation Guide
-1️⃣ Clone the repository
-git clone https://github.com/your-repo/baobites.git
+---
 
-2️⃣ Import the database
+## 🚀 Installation & Setup
 
-Create a MySQL database
+### Prerequisites
+- PHP 8.0 or higher
+- MySQL 5.7 or higher
+- Apache or Nginx web server
+- Composer (optional, for future packages)
 
-Import the provided SQL schema (recipes, users, favorites, ratings, comments)
+### Steps
 
-3️⃣ Configure database connection
+#### 1️⃣ Clone the Repository
+```bash
+git clone https://github.com/your-username/Meow-Long-Bao_BaoBites.git
+cd Meow-Long-Bao_BaoBites
+```
 
-Edit /app/db.php:
+#### 2️⃣ Create & Configure Database
+```bash
+# Create database in MySQL
+CREATE DATABASE baobites;
+USE baobites_db;
 
-$pdo = new PDO("mysql:host=localhost;dbname=baobites_db", "root", "");
+# Import schema
+SOURCE path/to/schema.sql;
+```
 
-4️⃣ Set project base URL
+#### 3️⃣ Configure Database Connection
+Edit `/app/db.php`:
+```php
+$pdo = new PDO(
+    "mysql:host=localhost;dbname=baobites_db", 
+    "root", 
+    ""
+);
+```
 
-In /assets/js/app.js, update:
-
+#### 4️⃣ Update Base URL
+Edit `/assets/js/app.js`:
+```javascript
 const BASE_URL = "/Meow-Long-Bao_BaoBites/baobites";
+```
 
-5️⃣ Run the system
+#### 5️⃣ Run Locally
+```bash
+# Move to htdocs or webroot
+cp -r baobites /var/www/html/
 
-Place the project inside htdocs or your server folder:
-
+# Access in browser
 http://localhost/baobites/public/index.php
+```
 
-🔐 Account Rules
+---
 
-Logged-in users cannot access login/register pages
+## 🎯 Usage
 
-Guests can view recipes but cannot:
-✓ Comment
-✓ Rate
-✓ Favorite
+### For Users
+1. **Register** at `/public/register.php`
+2. **Browse** recipes on the Dashboard
+3. **Create** your own recipe via "Add Recipe"
+4. **Rate & Comment** on community recipes
+5. **Save** favorites to your collection
 
-Users cannot rate their own recipe
+### For Developers
+1. AJAX endpoints in `/ajax/` handle all CRUD operations
+2. Database queries use **PDO Prepared Statements** (SQL injection protection)
+3. Frontend uses **jQuery** for smooth interactions
+4. No page reloads – all updates via AJAX callbacks
 
-Users can delete only their own recipes
+---
 
-🚀 Recent Updates
+## 📄 License
 
-Added guest-friendly recipe view
+This project is for **academic use** under University of Baguio.
 
-Disabled rating & favorite features for guests
+---
 
-Prevented users from rating their own recipes
+## 👥 Team
 
-Fixed fade-in animations on specific pages only
+**Team Meow Long Bao** – University of Baguio IT/Computer Science Program
 
-General UI fixes + improved navbar consistency
-
-Cookie animation tweaks
-
-Security tweaks on AJAX endpoints
-
-📝 License
-
-This project is for academic use under University of Baguio.
+**Made with ❤️ by Team Meow Long Bao**
