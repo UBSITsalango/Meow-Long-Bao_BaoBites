@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 23, 2025 at 12:32 AM
+-- Generation Time: Dec 01, 2025 at 08:08 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -59,16 +59,6 @@ CREATE TABLE `featured_recipes` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `featured_recipes`
---
-
-INSERT INTO `featured_recipes` (`id`, `recipe_id`, `created_at`) VALUES
-(3, 20, '2025-11-22 22:16:25'),
-(20, 33, '2025-11-22 23:05:56'),
-(24, 31, '2025-11-22 23:06:53'),
-(25, 30, '2025-11-22 23:06:54');
-
 -- --------------------------------------------------------
 
 --
@@ -108,8 +98,8 @@ CREATE TABLE `recipes` (
 
 CREATE TABLE `users` (
   `user_id` int(11) NOT NULL,
-  `first_name` varchar(30) DEFAULT NULL,
-  `last_name` varchar(30) DEFAULT NULL,
+  `first_name` varchar(50) DEFAULT NULL,
+  `last_name` varchar(50) DEFAULT NULL,
   `username` varchar(50) DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
@@ -122,7 +112,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `first_name`, `last_name`, `username`, `email`, `password`, `role`, `joined_at`) VALUES
-(1, 'Tyrone', 'Salango', 'turon', 'tysalango@gmail.com', '$2y$10$VI9/xMQGLDxSa4lrPnIfP.E22RNgh4.Dm3lt21atE9V9kSrVh87yG', 'admin', '2025-11-22 22:24:10');
+(1, 'Tyrone', 'Salango', 'admin', 'admin@baobites.com', '$2y$10$qCzTFNNhGVeZYmWAbNx1ae2DyRKUBCIOemFDjG6qmJOI3Fc1na9eC', 'admin', '2025-12-01 14:52:37'),
+(2, 'test', 'test', 'test', 'test@gmail.com', '$2y$10$alRdrrOWWXNdAJVHC6QsTeB8.sEkTJMv/Eernkm7HODDiLtZatufu', 'user', '2025-12-01 14:53:53');
 
 --
 -- Indexes for dumped tables
@@ -148,7 +139,8 @@ ALTER TABLE `favorite`
 -- Indexes for table `featured_recipes`
 --
 ALTER TABLE `featured_recipes`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_featured_recipes_recipe` (`recipe_id`);
 
 --
 -- Indexes for table `rating`
@@ -187,31 +179,31 @@ ALTER TABLE `comment`
 -- AUTO_INCREMENT for table `favorite`
 --
 ALTER TABLE `favorite`
-  MODIFY `favorite_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `favorite_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `featured_recipes`
 --
 ALTER TABLE `featured_recipes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `rating`
 --
 ALTER TABLE `rating`
-  MODIFY `rating_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `rating_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `recipes`
 --
 ALTER TABLE `recipes`
-  MODIFY `recipe_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `recipe_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables
@@ -230,6 +222,12 @@ ALTER TABLE `comment`
 ALTER TABLE `favorite`
   ADD CONSTRAINT `favorite_recipe_fk` FOREIGN KEY (`recipe_id`) REFERENCES `recipes` (`recipe_id`) ON DELETE CASCADE,
   ADD CONSTRAINT `favorite_user_fk` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `featured_recipes`
+--
+ALTER TABLE `featured_recipes`
+  ADD CONSTRAINT `fk_featured_recipes_recipe` FOREIGN KEY (`recipe_id`) REFERENCES `recipes` (`recipe_id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `rating`

@@ -48,16 +48,11 @@ include '../header.php';
 
 $(document).ready(function () {
 
-    $.get('../../ajax/load_all_recipes.php', res => {
-        $("#repRecipes").text((JSON.parse(res) || []).length);
-    });
-
-    $.get('../../ajax/load_users.php', res => {
-        $("#repUsers").text((JSON.parse(res) || []).length);
-    });
-
-    $.get('../../ajax/get_comment_count.php', res => {
-        $("#repComments").text(JSON.parse(res).count || 0);
+    $.get('../../ajax/get_stats.php', res => {
+        let stats = JSON.parse(res || "{}");
+        $("#repRecipes").text(stats.recipes || 0);
+        $("#repUsers").text(stats.users || 0);
+        $("#repComments").text(stats.comments || 0);
     });
 
 });

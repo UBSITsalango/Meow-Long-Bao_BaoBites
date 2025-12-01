@@ -101,8 +101,6 @@ $(document).ready(function () {
     $.get('../../ajax/load_all_recipes.php', function (res) {
         let data = JSON.parse(res || "[]");
 
-        $("#statRecipes").text(data.length);
-
         let html = "";
         data.forEach(r => {
             html += `
@@ -123,8 +121,6 @@ $(document).ready(function () {
     $.get('../../ajax/load_users.php', function (res) {
         let users = JSON.parse(res || "[]");
 
-        $("#statUsers").text(users.length);
-
         let html = "";
         users.forEach(u => {
             html += `
@@ -142,9 +138,11 @@ $(document).ready(function () {
         $("#adminUserTable").html(html);
     });
 
-    $.get('../../ajax/get_comment_count.php', function (res) {
-        let d = JSON.parse(res || "{}");
-        $("#statComments").text(d.count || 0);
+    $.get('../../ajax/get_stats.php', function (res) {
+        let stats = JSON.parse(res || "{}");
+        $("#statRecipes").text(stats.recipes || 0);
+        $("#statUsers").text(stats.users || 0);
+        $("#statComments").text(stats.comments || 0);
     });
 });
 </script>
